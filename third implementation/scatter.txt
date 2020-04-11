@@ -1,0 +1,18 @@
+load_ROM 0x0 0x08000000
+{
+ROM 0x0 0x80000
+{
+* ( +RO )
+}
+SRAM 0x80000 0x80000 
+{
+ *(sram)
+ stdio.o(+ZI,+RW)
+ libspace.o(+ZI,+RW )
+}
+
+DRAM 0x100000 0x80000
+{
+* (dram)
+}
+}
